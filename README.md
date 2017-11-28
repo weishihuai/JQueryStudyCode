@@ -1,3 +1,2 @@
 # JQueryStudyCode
-jquery常用方法学习总结
- jquery
+jquery常用方法学习总

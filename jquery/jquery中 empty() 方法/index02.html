@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 not()方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    empty()函数用于清空每个匹配元素内的所有内容：
+-->
+
+<div><p>段落文本1<span></span></p></div>
+<div><p>段落文本2<span></span></p></div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("p").empty( );
+
+        /*等价代码*/
+//        $("p").html("");
+
+    });
+
+
+
+</script>
+
+<div><p></p></div>
+<div><p></p></div>
+
+</body>
+</html>

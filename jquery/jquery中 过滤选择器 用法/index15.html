@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> [attribute ^= value], [attribute $= value]和[attribute *= value]（attribute属性值以value开始，以value结束，或包含value值）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li><a href="#" title="DOM对象和jQuery对象" class="item">DOM对象和jQuery对象</a></li>
+    <li><a href="#" title="jQuery选择器事件大全" class="item-selected">jQuery选择器事件大全</a></li>
+    <li><a href="#" title="jQuery事件大全" class="item">jQuery事件大全</a></li>
+    <li><a href="#" title="基于jQuery的插件开发" class="item">基于jQuery的插件开发</a></li>
+    <li><a href="#" title="Wordpress & jQuery" class="item">Wordpress & jQuery</a></li>
+    <li><a href="#" class="item">其他</a></li>
+</ul>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("a[title^=DOM]").css("color","#0ff");   //title开头DOM
+
+        $("a[title$=jQuery]").css("color","#f00");  //title结尾jQuery
+
+        $("a[title*=事件]").css("color","#0f0");  //title包含事件
+
+    });
+
+</script>
+
+</body>
+</html>

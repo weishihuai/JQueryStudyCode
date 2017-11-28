@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中find（）方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    此方法获得匹配元素集合中所有元素的子元素，并通过选择器、jQuery 对象或元素删选。
+    find()方法是获取匹配元素后代元素的好方法。
+    注意:children()只获取一级子元素，而find()将查找所有子元素。
+-->
+
+<div class="father">
+    <div class="children">
+        <p id="myp">我是孙子p</p>
+    </div>
+    <p>我是儿子p</p>
+</div>
+<p>我是兄弟p</p>
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $(".father").find("p").css("color","red");
+        $(".father").find($("#myp")).css("border","1px solid red");
+
+    });
+
+</script>
+
+
+</body>
+</html>

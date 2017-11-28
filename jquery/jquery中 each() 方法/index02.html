@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中each（）方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    $.each()与$(selector).each()不同, 后者专用于jquery对象的遍历, 前者可用于遍历任何的集合(无论是数组或对象),如果是数组,回调函数每次传入数组的索引和对应的值
+    (值亦可以通过this 关键字获取,但javascript总会包装this 值作为一个对象—尽管是一个字符串或是一个数字),方法会返回被遍历对象的第一参数.
+-->
+
+<script type="text/javascript">
+
+    /*
+
+        1、选择器+遍历
+            $('div').each(function (i){
+               i就是索引值
+               this 表示获取遍历每一个dom对象
+            });
+
+        2、选择器+遍历
+            $('div').each(function (index,domEle){
+               index就是索引值
+              domEle 表示获取遍历每一个dom对象
+            });
+
+        3、更适用的遍历方法
+            1）先获取某个集合对象
+            2）遍历集合对象的每一个元素
+                var d=$("div");
+                $.each(d,function (index,domEle){
+                  d是要遍历的集合
+                  index就是索引值
+                  domEle 表示获取遍历每一个dom对
+                });
+
+    */
+
+</script>
+
+
+</body>
+</html>

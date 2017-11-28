@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:text（取单行文本框元素）和:password（取密码框元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<fieldset style="width: 300px;">
+    <legend>账户登录</legend>
+    <div>
+        <label>用户名：</label>
+        <input type="text"/>
+    </div>
+    <div>
+        <label>密  码：</label>
+        <input type="password"/>
+    </div>
+</fieldset>
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $(":text").css("border","1px solid #f00");
+
+        $(":password").css("border","1px solid #0f0");
+
+    });
+
+</script>
+
+</body>
+</html>

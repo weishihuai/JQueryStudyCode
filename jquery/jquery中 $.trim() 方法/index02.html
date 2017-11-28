@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 $.trim() 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+<div id="win">
+    <p><label>手机号码：</label><input type="text" id="test" maxlength="13" value="" onkeyup="doSet(this)"></p>
+</div>
+<script type="text/javascript">
+    function doSet(dom) {
+        var phone = dom.value;
+        var pLength = phone.length;
+
+        if(pLength > 3) {
+            phone = phone.replace(/\s*/g, "");
+            if(phone.length > 7) {
+                phone = phone.replace(/^(...)(....)/g, "$1 $2 ");
+            } else if(phone.length > 3) {
+                phone = phone.replace(/^(...)/g, "$1 ");
+            }
+        }
+
+        dom.value = phone;
+    }
+</script>
+
+</body>
+</html>

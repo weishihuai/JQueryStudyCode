@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 not（）方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    empty() 方法从被选元素所有子节点和内容。
+    注意：该方法不会移除元素本身，或它的属性。
+    提示：如需移除元素，但保留数据和事件，请使用 detach() 方法。
+    提示：如需移除元素及它的数据和事件，请使用 remove() 方法。
+-->
+
+
+<div style="height:100px;background-color:yellow">
+    这是一些文本。
+    <p>这是div块中的一个段落。</p>
+</div>
+<p>这是div块外部的一个段落。</p>
+<button>移除div块中的内容</button>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("button").click(function () {
+            $("div").empty();
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

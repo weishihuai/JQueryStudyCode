@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 jquery.isArray() 函数详解 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    jQuery.isArray()函数用于判断指定参数是否是一个数组。
+    该函数属于全局jQuery对象。
+
+
+    jQuery.isArray( object )
+    object ===>	任意类型需要进行判断的任意值。
+
+    jQuery.isArray()函数的返回值为Boolean类型，如果指定的参数是数组，则返回true，否则返回false。
+-->
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        document.writeln(jQuery.isArray(['a','b','c']) === true ? "['a','b','c'] 是数组" : "['a','b','c'] 不是数组");
+        document.write("<br/>");
+        document.write("<br/>");
+        document.writeln(jQuery.isArray([]) === true ? "[] 是数组" : "[] 不是数组");
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write(jQuery.isArray(null) === true ? "null 是数组" : "null 不是数组");
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write(jQuery.isArray(true) === true ? "true 是数组" : "true 不是数组");
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write(jQuery.isArray({}) === true ? "{} 是数组" : "{} 不是数组");
+        document.write("<br/>");
+        document.write("<br/>");
+        var obj = { };
+        obj[0] = 10;
+        obj[1] = 25;
+        obj[2] = 3;
+        obj.length = 3;
+        // obj是一个类数组对象，但它仍然不是一个真正的数组
+        document.write(jQuery.isArray(obj) === true ? "obj 是数组" : "obj 不是数组");
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中siblings（）方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    向 <ul> 元素添加 click 处理程序，然后把代码限制为只有当列表项本身，而非子元素，被点击时才进行触发
+-->
+
+<ul>
+    <li>list <strong>item 1</strong></li>
+    <li><span>list item 2</span></li>
+    <li>list item 3</li>
+</ul>
+
+
+<div id="#div" style="width: 200px;height: 200px; background-color: #FF0000;">xxxx</div>
+
+<input id="#chk" type="checkbox" checked value="xxx"/>aaa
+
+
+<script type="text/javascript">
+
+    $("ul").click(function (e) {
+
+        var $target = $(e.target);
+        if ($target.is("li")) {
+            $target.css("background-color", "red");
+        }
+
+    });
+
+    $(document).ready(function () {
+
+        var flag = $("#div").is(":visible");
+        alert(flag);
+
+
+        alert($("#chk").is(':checked'));
+
+    });
+
+</script>
+
+
+</body>
+</html>

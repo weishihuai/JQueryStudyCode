@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 jquery.map()函数详解 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+
+    jQuery.map()函数用于使用指定函数处理数组中的每个元素(或对象的每个属性)，并将处理结果封装为新的数组返回。
+
+    jQuery.map()函数将遍历数组的元素(或对象的属性)并分别执行函数callback，函数中的this将指向全局对象(window)。
+    jQuery.map()还会为函数传入两个参数：其一是当前迭代的元素或属性值，其二是当前迭代项的数组索引或对象属性名。
+    每次执行callback函数的返回值将作为结果数组中的一个元素，如果函数的返回值为null或undefined，则不会被添加到结果数组中。
+
+    jQuery.map()函数的返回值为Array类型，返回经过处理后结果数组。
+
+-->
+
+<input id="n1" name="uid" type="checkbox" checked value="1" />
+<input id="n2" name="uid" type="checkbox" checked value="2" />
+<input id="n3" name="uid" type="checkbox" value="3" />
+<input id="n4" name="uid" type="checkbox" checked value="4" />
+
+<script type="text/javascript">
+    var arr = [ "CodePlayer", 15, true ];
+    $(function () {
+
+        var result = $.map(arr,function (value, index) {
+            if (typeof value === "string") {
+                return null;
+            }else {
+                return value;
+            }
+        });
+
+        document.write(result);   //15,true
+
+    });
+
+
+    var obj = { name: "CodePlayer", age: 18 };
+
+    var result2 = $.map(obj,function (key,value) {
+        return {
+            "name":key,
+            "value":value
+        }
+    });
+    alert(result2);   // [object Object],[object Object]
+
+
+    var result3 = $.map($("input[name=uid]:checked"),function (dom, key) {
+        return dom.value;
+    });
+    alert(result3);  // 1,2,4
+
+</script>
+
+
+</body>
+</html>

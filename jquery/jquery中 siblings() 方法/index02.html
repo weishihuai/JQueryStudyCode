@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中siblings（）方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    siblings() 方法返回被选元素的所有同级元素。
+    同级元素是共享相同父元素的元素。
+    DOM 树：该方法沿着 DOM 元素的同级元素向前和向后遍历。
+-->
+
+<ul>
+    <li>A</li>
+    <li id="two">B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+    <span>F</span>
+</ul>
+
+<script type="text/javascript">
+
+    var item = $("span");
+
+    item.siblings("li").css("background-color","#f00");
+    item.siblings("#two").css("background-color","#00f");
+
+</script>
+
+
+</body>
+</html>

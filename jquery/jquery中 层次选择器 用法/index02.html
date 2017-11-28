@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prev + next（下一个兄弟元素，等同于next()方法）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--// 选取class为item的下一个div兄弟元素-->
+
+<p class="item"></p>
+<div>123</div>
+<div>456</div>
+<span class="item"></span>
+<div>789</div>
+
+<ul id="one">
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+</ul>
+
+<p>xxxxxxxxxxxxxx</p>
+<p>yyyyyyyyyyyyyy</p>
+
+
+<!--下面的代码，只有123和789会变色-->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+//        $(".item + div").css("color","#0f0");
+
+        // 等价代码
+        $('.item').next('div').css('color', '#FF0000');
+    });
+
+    // xxxxxxxxxxxxxx变红
+    $(function () {
+       $("#one + p").css("color","#f00");
+    });
+
+</script>
+</body>
+</html>

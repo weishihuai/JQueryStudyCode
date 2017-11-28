@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 $.inArray(val,arr,[from])方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+
+-->
+
+<div>"John" 在索引值为 <span></span> 的位置被找到</div>
+<div>4 在索引值为 <span></span> 的位置被找到</div>
+<div>"Karl" 未被找到，所以返回 <span></span> </div>
+<div>"Pete" 在数组中，但是不在索引值大于2的位置，所以返回 <span></span></div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var arr = [ 4, "Pete", 8, "John" ];
+        var $spans = $("span");
+        $spans.eq( 0 ).text( jQuery.inArray( "John", arr ) );
+        $spans.eq( 1 ).text( jQuery.inArray( 4, arr ) );
+        $spans.eq( 2 ).text( jQuery.inArray( "Karl", arr ) );
+        $spans.eq( 3 ).text( jQuery.inArray( "Pete", arr, 2 ) );
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

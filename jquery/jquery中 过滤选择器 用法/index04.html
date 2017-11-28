@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:eq(x) （取指定索引的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+<table width="200" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr><td>A</td></tr>
+    <tr><td>B</td></tr>
+    <tr><td>C</td></tr>
+    <tr><td>D</td></tr>
+</table>
+</tbody>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("tr:eq(0)").css("background","#0f0");  //第一条数据
+        $("tr:eq(1)").css("background","#00f");  //第二条数据
+        $("tr:eq(2)").css("background","#0ff");  //第三条数据
+        $("tr:eq(3)").css("background","#f00");  //第四条数据
+    });
+
+</script>
+
+</body>
+</html>

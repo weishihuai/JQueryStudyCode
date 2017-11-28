@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 not（）方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<p>This is a paragragh.</p>
+<p>This is a paragragh.</p>
+<p>This is a paragragh.</p>
+<p id="selected">This is a paragragh.</p>
+<p>This is a paragragh.</p>
+<p>This is a paragragh.</p>
+
+<!--从包含所有段落的集合中删除 id 为 "selected" 的段落-->
+
+
+<ul>
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+</ul>
+
+
+<!--
+    如果给定一个表示 DOM 元素集合的 jQuery 对象，.not() 方法会用匹配元素的子集构造一个新的 jQuery 对象。所应用的选择器会检测每个元素；不匹配该选择器的元素会被包含在结果中。
+-->
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("p").not("#selected").css("background-color","#f00");
+
+    });
+
+
+    $(function () {
+        /*将项目 2 和 4 设置为红色背景，这是因为它们不匹配选择器（:even 和 :odd 均使用基于 0 的 index）。*/
+
+        $("ul li").not(":even").css("background-color","#0f0");
+
+    });
+
+</script>
+
+
+</body>
+</html>

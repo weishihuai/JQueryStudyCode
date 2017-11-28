@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> :first-child和:last-child </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:first-child表示第一个子元素，:last-child表示最后一个子元素。
+需要大家注意的是，:fisrst和:last返回的都是单个元素，而:first-child和:last-child返回的都是集合元素。
+举个 例子：div:first返回的是整个DOM文档中第一个div元素，而div:first-child是返回所有div元素下的第一个元素合并后的集合。-->
+
+<div>123
+    <div>456
+        <div></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var length1 = $("div:first-child").length;
+        var length2 = $("div:last-child").length;
+        document.writeln("" + length1);
+        document.writeln("" + length2);
+
+        $("div:first-child").each(function () {
+            alert($(this).html());
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

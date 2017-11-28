@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> setTimeout()与setInterval() 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+
+    window.clearTimeout
+-->
+<form>
+    <input type="button" value="Display timed alertbox!"
+           onClick="timedMsg()">
+</form>
+<p>Click on the button above. An alert box will be
+    displayed after 5 seconds.</p>
+
+
+<script type="text/javascript">
+
+    function timedMsg() {
+        setTimeout('alert("5 seconds")',5000);
+    }
+
+
+    $(function(){
+        function show(){
+            alert("ready");
+        }
+        setInterval(show,3000);      // 注意函数名没有引号和括弧
+        // 使用setInterval("show()",3000);     会报“缺少对象”
+    });
+
+    /*
+     setTimeout()：用于在指定的毫秒数后调用函数或表达式， 注意：只调用一次，然后就结束了
+     setInterval() ：按照指定的周期(以毫秒计)来调用函数或表达式， 注意：重复调用，直到遇到clearInterval()，调用才被关闭，否则一直执行
+    */
+
+</script>
+
+</body>
+</html>

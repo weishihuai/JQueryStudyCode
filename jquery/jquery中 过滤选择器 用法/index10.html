@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> :parent（取包含子元素或文本的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<ol>
+    <li></li>
+    <li>A</li>
+    <li></li>
+    <li>D</li>
+</ol>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("li:parent").css("border","5px solid #f00");
+    });
+
+</script>
+
+</body>
+</html>

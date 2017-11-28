@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 attr（）方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<img id="img01" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506416852072&di=a2e61f7659422262974f1029f2da79cf&imgtype=0&src=http%3A%2F%2Fm.qqzhi.com%2Fupload%2Fimg_5_3925578955D265818562_23.jpg">你好</img>
+
+<button type="button" id="btn">点击改变图片大小</button>
+
+<script type="text/javascript">
+
+    $("#btn").click(function () {
+
+        //设置基本属性，注意同时设置多个属性的话需要使用对象设置。
+        var img01 = $("#img01");
+        img01.attr({
+            "width":"200px",
+            "height":"200px"
+        });
+
+        //设置元素的属性  多个属性的设置
+        $("img").attr({
+            src: "http://img4.imgtn.bdimg.com/it/u=311782928,2124121112&fm=200&gp=0.jpg",
+            alt: "Test Image"
+        });
+
+        img01.attr("title",function () {
+            return this.src;
+        });
+
+        //获取元素的属性
+        var imgUrl = img01.attr("src");
+        alert(imgUrl);
+
+    });
+
+</script>
+
+
+</body>
+</html>

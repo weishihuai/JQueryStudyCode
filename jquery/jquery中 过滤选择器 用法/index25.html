@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:checkbox（取复选框元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+     :submit（取提交按钮元素）
+     :reset（取重置按钮元素）
+     :button（取按钮元素）
+     :file（取上传域元素）
+     :hidden（取不可见元素）
+-->
+
+
+<form action="#" method="post" >
+
+    <input type="text" value="xxx"/>文本框 <br>
+    <input type="submit" />提交 <br>
+    <input type="reset" />重置 <br>
+    <input type="file" />选择文件 <br>
+    <input type="button" id="btn" value="按钮"/>按钮<br>
+
+</form>
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $(":submit").css("color","#f00");
+
+        $(":reset").css("color","#0f0");
+
+        $(":button").css("color","#ff0");
+
+
+    });
+
+
+    $(document).ready(function () {
+       $("#btn").click(function () {
+
+       });
+    });
+
+</script>
+
+</body>
+</html>

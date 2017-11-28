@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 jquery.map()函数详解 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+
+    $.map(data,function(item,index){return XXX})
+    遍历data数组中的每个元素，并按照return中的计算方式 形成一个新的元素，放入返回的数组中
+
+-->
+
+<p><b>Values: </b></p>
+
+<form>
+    <input type="text" name="name" value="John"/>
+    <input type="text" name="password" value="password"/>
+    <input type="text" name="url" value="http://w3school.com.cn/"/>
+</form>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        //原数组中大于 0 的元素加 1 ，否则删除。
+        var result = $.map([0,1,2],function (n) {
+            return n > 0 ? n + 1 : null;
+        });
+        alert(result);   //  [2, 3]
+    });
+
+
+    $(function () {
+
+        var b = $.map([55,0,1],function (index, value) {
+            return {
+                "index":index,
+                "value":value
+            }
+        });
+        document.write(b[0].index + " ==> " + b[0].value + "<br/>");
+        document.write(b[1].index + " ==> " + b[1].value + "<br/>");
+        document.write(b[2].index + " ==> " + b[2].value + "<br/>");
+
+    });
+
+
+    $(function () {
+        var array = [0, 1, 52, 97];
+        array = $.map(array, function(a, index) {
+            return [a - 45, index];
+        });
+        alert(array);   //[-45, 0, -44, 1, 7, 2, 52, 3]
+    });
+
+
+    $(function () {
+        $("p").append( $("input").map(function(){
+            return $(this).val();
+        }).get().join(", ") );  // Values: John, password, http://w3school.com.cn/
+    });
+
+</script>
+
+
+</body>
+</html>

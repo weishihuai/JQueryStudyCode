@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中siblings（）方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div><span>Hello</span></div>
+<p class="selected">Hello Again</p>        <!--yellow-->
+<p>And Again</p>
+
+
+<ul>
+    <li>list item 1</li>   <!--red-->
+    <li>list item 2</li>   <!--red-->
+    <li class="third-item">list item 3</li>
+    <li>list item 4</li>   <!--red-->
+    <li>list item 5</li>   <!--red-->
+</ul>
+
+<script type="text/javascript">
+
+    /*查找每个 p 元素的所有类名为 "selected" 的所有同胞元素：*/
+
+    $(function () {
+
+        $("p").siblings(".selected").css("background", "yellow");
+
+        $("li.third-item").siblings().css("background", "red");
+
+    });
+
+</script>
+
+
+</body>
+</html>

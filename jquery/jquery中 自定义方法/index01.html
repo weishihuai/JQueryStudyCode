@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery 自定义方法 </title>
+</head>
+<body >
+<input type="button" value="按钮" id="myBtn"  >
+</body>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+
+    $(function(){
+
+    });
+
+
+    /**
+     * jQuery中添加自定义或函数方法1,如$.fn.extend({'aa':function(){}})或jQuery.fn.aa=function(){},这种调用时就得这样,$("#**").aa()
+     */
+    jQuery.fn.myFuncOne=function(){
+        alert("我的自定义jquery方法1");
+    };
+
+
+
+    jQuery.fn.extend({
+        'myFuncFour':function(){
+            alert("我的自定义jquery方法4");
+        }
+    });
+
+
+    /**
+     * jQuery中添加自定义或函数方法2,如$.extend({'aa':function(){}}),这种调用时就是这样$.aa()
+     */
+    jQuery.extend({
+        'myFuncTwo':function(){
+            alert("我的自定义jquery方法2");
+        }
+    });
+
+
+
+    /**
+     * jQuery中添加自定义或函数方法3,如 $.myFuncThree('/post/getsecurejsonpost',{}, function(data) {});
+     */
+    $.myFuncThree = function(url, data, successCB){
+        alert("我的自定义jquery方法3,参数："+url);
+        if(successCB){//回调
+            successCB(url);
+        }else{
+            alert("没有回调");
+        }
+    };
+
+    function myFuncThreeCB(url){
+        alert("myFuncThreeCB+"+url)
+    }
+
+    /*
+     * 测试按钮
+     */
+    $("#myBtn").click(function(){
+        $("#myBtn").myFuncOne();
+        $("#myBtn").myFuncFour();
+        $().myFuncTwo();
+        $.myFuncThree("www.baidu.com",'hello',myFuncThreeCB);
+        $.myFuncThree("www.baidu.com",'hello');
+    })
+</script>
+</html>

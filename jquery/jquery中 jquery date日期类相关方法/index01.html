@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 jquery date日期类相关方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        var now = new Date();
+        document.write("当前毫秒数: " + now.getTime() + "<br>");             //1506331180180
+        document.write("当前毫秒数: " + $.now() + "<br>");                       //1506331180180
+        document.write("当前日期号: " + now.getDate() + "<br>");   //25号
+        document.write("星期: " + now.getDay() + "<br>");   //星期一
+        document.write("年份: " +  now.getFullYear() + "<br>");    //2017
+        document.write("小时数: " +  now.getHours() + "<br>");   //17:23     17
+        document.write( now.getMilliseconds() + "<br>");
+        document.write("分钟数: " + now.getMinutes() + "<br>");   //17:23    23
+        document.write("月份: " + (now.getMonth() + 1)  + "<br>");  //8  要加1    2017/9/25
+        document.write("秒数: " + now.getSeconds() + "<br>");  //6
+        document.write("年份基数(距离1900年的基数):" + now.getYear() + "<br>");   //117     getYear 返回的是 "当前年份-1900" 的值（即年份基数是1900）
+    });
+
+</script>
+
+</body>
+</html>

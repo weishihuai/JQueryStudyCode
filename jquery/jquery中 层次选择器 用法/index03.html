@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prev ~ siblings（prev元素的所有兄弟元素，等同于nextAll()方法）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--选取class为inside之后的所有div兄弟元素-->
+
+<div class="inside">G1</div>
+<div>G2</div>
+<span>G3</span>
+<div>G4</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+//       $(".inside ~ div").css("color","#00f");
+       $(".inside").nextAll("div").css("color","#00f");
+
+    });
+
+</script>
+
+</body>
+</html>

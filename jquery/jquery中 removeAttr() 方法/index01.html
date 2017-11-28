@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 removeAttr() 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--从每一个匹配的元素中删除相应的属性。-->
+
+<img id="img01" name="img01" src="http://img4.imgtn.bdimg.com/it/u=311782928,2124121112&fm=200&gp=0.jpg"/>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var img01 = $("#img01");
+        //删除单一属性
+        img01.removeAttr("name");
+
+        alert("删除name属性之后name = " + img01.attr("name"));  //undefined
+
+        //删除多个属性
+        img01.removeAttr("src name");  //删除之后元素结构为:   <img>
+        alert("删除name属性之后name = " + img01.attr("name"));  //undefined
+        alert("删除src属性之后src = " + img01.attr("src"));  //undefined
+
+        //下面的方法也可以删除元素的属性  //删除之后元素结构为: <img src alt>
+        img01.attr("src","");
+        img01.attr("name","");
+        alert("删除name属性之后name = " + img01.attr("name"));  //""
+        alert("删除src属性之后src = " + img01.attr("src"));  //""
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> :gt(x)和:lt(x)（取大于x索引或小于x索引的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>L1</li>
+    <li>L2</li>
+    <li>L3</li>
+    <li>L4</li>
+    <li>L5</li>
+</ul>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("ul li:gt(2)").css("color","#0f0");
+        $("ul li:lt(2)").css("color","#0ff");
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 attr()方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        p{color:red}
+        li{color:blue;}
+        .lili{font-weight:bold;color:red;}
+        #lili{font-weight:bold;color:red;}
+    </style>
+</head>
+<body>
+
+<p title="你最喜欢的水果是。">你最喜欢的水果是？</p>
+<ul>
+    <li title="苹果汁">苹果</li>
+    <li title="橘子汁" alt="123">橘子</li>
+    <li title="菠萝汁">菠萝</li>
+</ul>
+
+<script type="text/javascript">
+
+    //如果元素没有相应属性，则返回 undefined ）
+    $(function () {
+        var elem = $("ul li:eq(1)");
+        alert(elem.attr("title"));
+        alert(elem.attr("value"));   //undefined
+    });
+
+
+    $(function () {
+        var elem = $("ul li:eq(1)");
+        elem.attr("title","不吃橘子汁");
+        alert(elem.attr("title"));
+    });
+
+    //将一个“名/值”形式的对象设置为所有匹配元素的属性
+    $(function () {
+        var elem = $("ul li:eq(1)");
+        elem.attr({
+            "title":"不吃橘子汁",
+            "alt":"不是123"
+        });
+        alert(elem.attr("title"));
+        alert(elem.attr("alt"));
+    });
+
+
+    $(function () {
+        var elem = $("ul li:eq(1)");
+        elem.attr("class","lili");
+        elem.attr("style","color:blue");
+    });
+
+</script>
+
+
+</body>
+</html>

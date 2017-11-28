@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:hidden（取不可见的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        div
+        {
+            margin: 10px;
+            width: 200px;
+            height: 40px;
+            border: 1px solid #FF0000;
+            display:block;
+        }
+        .hid-1
+        {
+            display: none;
+        }
+        .hid-2
+        {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="hid-1">display: none</div>
+<div class="hid-2">visibility: hidden</div>
+<input type="hidden" value="hello"/>
+
+
+<script type="text/javascript">
+
+    /*jQuery至1.3.2之后的:hidden选择器仅匹配display:none或<input type="hidden" />的元素，而不匹配visibility: hidden或opacity:0的元素。这也意味着hidden只匹配那些“隐藏的”并且不占空间的元素，
+    像visibility:hidden或 opactity:0的元素占据了空间，会被排除在外。*/
+
+    $(function () {
+        $("div:hidden").show(3000);
+        alert($("input:hidden").val());
+    });
+
+</script>
+
+</body>
+</html>

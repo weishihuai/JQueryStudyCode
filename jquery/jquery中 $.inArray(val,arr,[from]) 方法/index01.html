@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 $.inArray(val,arr,[from])方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    确定第一个参数在数组中的位置，从0开始计数(如果没有找到则返回 -1 )。
+
+    value:用于在数组中查找是否存在
+    array:待处理数组。
+    fromIndex:用来搜索数组队列，默认值为0。
+-->
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        var arr = [ 4, "Pete", 8, "John" ];
+        alert($.inArray(4,arr));   //0
+        alert($.inArray("John",arr));   //3
+        alert($.inArray("aaaaa",arr));   //-1
+    });
+
+</script>
+
+
+</body>
+</html>

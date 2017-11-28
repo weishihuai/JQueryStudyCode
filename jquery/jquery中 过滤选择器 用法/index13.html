@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> [attribute]（取拥有attribute属性的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<ul>
+    <li><a href="#" title="DOM对象和jQuery对象" class="item">DOM对象和jQuery对象</a></li>
+    <li><a href="#" title="jQuery选择器大全" class="item-selected">jQuery选择器大全</a></li>
+    <li><a href="#" title="jQuery事件大全" class="item">jQuery事件大全</a></li>
+    <li><a href="#" title="基于jQuery的插件开发" class="item">基于jQuery的插件开发</a></li>
+    <li><a href="#" title="Wordpress & jQuery" class="item">Wordpress & jQuery</a></li>
+    <li><a href="#" class="item">其他</a></li>
+</ul>
+
+<script type="text/javascript">
+    $(document).ready(function () {  //带有title属性的a标签的颜色设置为红色
+        $("a[title]").css("color","#f00");
+    });
+</script>
+
+</body>
+</html>

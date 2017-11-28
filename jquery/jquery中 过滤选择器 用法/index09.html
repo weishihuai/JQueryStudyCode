@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:has(selector)（取选择器匹配的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div>
+    <h2>
+        A   <span>B</span>
+    </h2>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("div:has(span)").css("border","5px solid #f00");
+    });
+
+</script>
+
+</body>
+</html>

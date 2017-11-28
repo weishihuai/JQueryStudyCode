@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:even和:odd（取偶数索引或奇数索引元素，索引从0开始，even表示偶数，odd表示奇数）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:even和:odd（取偶数索引或奇数索引元素，索引从0开始，even表示偶数，odd表示奇数）-->
+
+<table width="200" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr><td>A</td></tr>
+    <tr><td>B</td></tr>
+    <tr><td>C</td></tr>
+    <tr><td>D</td></tr>
+</table>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $("tr:even").css("background","#dff");  // 偶数行颜色
+        $("tr:odd").css("background","#dd0");   // 奇数行颜色
+    });
+
+</script>
+
+</body>
+</html>

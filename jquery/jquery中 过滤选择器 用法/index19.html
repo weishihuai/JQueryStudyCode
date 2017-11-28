@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> :nth-child </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:nth-child就表示第n个child元素。要注意的是，这儿的n不像eq(x)、gt(x)或lt(x)是从 0开始的，它是从1开始的-->
+
+<table>
+    <tr><td>1. NBA 2012季后赛</td></tr>   //1  nth-child(1)
+    <tr><td>2. NBA 2011季后赛</td></tr>   //2  nth-child(2)
+    <tr><td>3. NBA 2010季后赛</td></tr>   //3  nth-child(3)
+    <tr><td>4. NBA 2009季后赛</td></tr>   //4  nth-child(4)
+    <tr><td>5. NBA 2008季后赛</td></tr>   //5  nth-child(5)
+    <tr><td>6. NBA 2007季后赛</td></tr>   //6  nth-child(6)
+</table>
+
+<script type="text/javascript">
+
+    /*  1) :nth-child(x)，获取第x个子元素
+        2) :nth-child(even)和:nth-child(odd)，从1开始，获取第偶数个元素或第奇数个元素
+    */
+
+    $(function () {
+
+        $("tr:nth-child(even)").css("background","#f00");
+
+        $("tr:nth-child(odd)").css("background","#0f0");
+
+    });
+
+</script>
+
+</body>
+</html>

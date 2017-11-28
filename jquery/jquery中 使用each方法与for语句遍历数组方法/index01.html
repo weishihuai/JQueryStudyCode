@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery 自定义方法 </title>
+</head>
+<body >
+
+<button onclick="forFunc()">forFunc</button><br>
+<div id="forFunc"></div>
+<button onclick="eachFunc()">eachFunc</button><br>
+<div id="eachFunc"></div>
+
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+    var array=["huangBi","24","boy"];
+    var length = array.length;
+
+
+    /**
+     * 使用each方法
+     */
+    function eachFunc(){
+        var result = "";
+        $(array).each(function(i,n){
+            //下面两种方式实现的效果是一样的
+            //result=result.concat(array[i]+" ; ");
+            result = result.concat(n + " ; ");
+        });
+        $("#eachFunc").html(result);
+    }
+
+    /**
+     * 使用for循环方法
+     * @returns {boolean}
+     */
+    function forFunc(){
+        var result = "";
+        for(var i = 0; i < length; i++){
+            result = result.concat(array[i] + " ; ");
+        }
+        $("#forFunc").html(result);
+        return true;
+    }
+
+
+
+
+</script>
+
+
+
+</html>

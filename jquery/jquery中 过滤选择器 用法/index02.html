@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:not（取非元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:not（取非元素）-->
+
+<div>G1</div>
+<div class="wrap">G2</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $("div:not(.wrap)").css("color","#0ff");
+    });
+
+</script>
+</body>
+</html>

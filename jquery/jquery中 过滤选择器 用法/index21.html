@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:selected（取下拉列表被选中的元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<select>
+    <option value="外企">外企</option>
+    <option value="国企" selected>国企</option>
+    <option value="私企">私企</option>
+</select>
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        alert($(":selected").val());
+
+    });
+
+</script>
+
+</body>
+</html>

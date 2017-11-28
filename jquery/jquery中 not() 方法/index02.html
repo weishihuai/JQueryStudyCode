@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 not()方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+    $(selector).not(function)
+
+    function(index)	用来遍历元素的集合函数，并返回要被删除的一个元素。
+    此函数接受一个参数index，这是元素在jQuery集合的索引。
+    在函数中， this指的是当前的DOM元素。
+-->
+
+<div>
+    <ul>
+        <li>HTML专区</li>
+        <li class="js">Javascript专区</li>
+        <li>Div+Css专区</li>
+        <li>Jquery专区</li>
+    </ul>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        alert("class不是.js的li元素的个数为: " + $("ul li").not(".js").length);
+
+        alert("class不是.js的li元素的个数为: " + $("ul li").not(function () {
+           return $(this).attr("class") === "js";
+        }).length);
+
+    });
+
+</script>
+
+
+</body>
+</html>

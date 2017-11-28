@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:checkbox（取复选框元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:checkbox选择器和属性选择器$('input[type=checkbox]')等同-->
+
+您的兴趣爱好：
+<input type="checkbox" value="游泳"/>游泳
+<input type="checkbox" value="看书"/>看书
+<input type="checkbox" checked="checked" value="打篮球"/>打篮球
+<input type="checkbox" checked="checked" value="电脑游戏"/>电脑游戏
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $(":checkbox").each(function () {
+           alert($(this).val());
+        });
+
+        $("input[type=checkbox]").each(function () {
+            alert($(this).val());
+        });
+
+        $("input[type=checkbox][checked]").each(function () {
+           alert($(this).val());
+        });
+
+        $(":checked").each(function () {
+            alert($(this).val());
+        });
+
+        $(":checkbox:checked").each(function () {
+            alert($(this).val());
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

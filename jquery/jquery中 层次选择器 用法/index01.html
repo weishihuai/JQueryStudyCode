@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parent > child（直系子元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<!--// 选取div下的第一代span元素，将字体颜色设为红色-->
+<div>
+    <span>123</span>
+    <p>
+        <span>456</span>
+    </p>
+</div>
+
+<!--只有第一个span会变色，第二个span不属于div的一代子元素，颜色保持不变-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("div > span").css("color","#f00");
+    });
+
+</script>
+</body>
+</html>

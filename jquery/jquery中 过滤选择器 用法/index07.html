@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:contains(text)（取包含text文本的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<dl>
+    <dt>技术</dt>
+    <dd>jQuery, .NET, CLR</dd>
+    <dt>SEO</dt>
+    <dd>关键字排名</dd>
+    <dt>其他</dt>
+    <dd></dd>
+</dl>
+
+<script type="text/javascript">
+
+    /*dd元素中包含"jQuery"文本的会变色*/
+
+    $(function () {
+        $('dl dd:contains("jQuery")').css("color","#f00");
+
+        $('dl dt:contains("SEO")').css("color","#ff0");
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:empty（取不包含子元素或文本为空的元素）</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<dl>
+    <dt>技术</dt>
+    <dd>jQuery, .NET, CLR</dd>
+    <dt>SEO</dt>
+    <dd>关键字排名</dd>
+    <dt>其他</dt>
+    <dd></dd>
+</dl>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("dd:empty").html("暂无内容").css("background","#0ff");
+    });
+
+</script>
+
+</body>
+</html>

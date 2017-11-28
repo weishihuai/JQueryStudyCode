@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:enabled和:disabled（取可用或不可用元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--:enabled和:diabled的匹配范围包括input, select, textarea。-->
+
+<div>
+    <input type="text" value="可用的文本框"/>
+</div>
+
+<div>
+    <input type="text" disabled="disabled" value="不可用的文本框"/>
+</div>
+
+<div>
+    <textarea disabled="disabled">不可用的文本域</textarea>
+</div>
+
+<div>
+    <select disabled="disabled">
+        <option>English</option>
+        <option>简体中文</option>
+    </select>
+</div>
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $(":enabled").css("border","1px solid #FF0000");
+
+        $(":disabled").css("border","1px solid #00FF00");
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中html-与-text方法的区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div><span>Hello</span></div>
+
+<p>
+    <span>Hello</span>
+    <div>fine</div>
+</p>
+
+<div id="div01">Paragraph.</div>
+
+<script type="text/javascript">
+
+    /*  html()在获取元素内容时，如果选择器匹配多于一个的元素，那么只有第一个匹配元素的 HTML 内容会被获取。
+        text()在获取元素内容时，结果是由所有匹配元素包含的文本内容组合起来的文本
+    */
+
+    /*
+        html()在获取内容时，会将其中的其他标签也读取出来
+        text()在获取内容时，会忽略其中的标签
+    */
+
+    /*
+        html()在更改内容时，可以加入标签
+        text()更改的全是内容
+    */
+
+    $(function () {
+        var cont = $("div").html();   //取得第一个匹配元素的html内容
+        alert(cont);
+    });
+
+
+    $(function () {
+       $("div").html("<a href='http://www.baidu.com'>Hello</a>");  //设置每一个匹配元素的html内容
+    });
+
+
+    $(function () {
+       var cont = $("p").text();
+       alert(cont);
+    });
+
+
+    $(function () {
+       var newObj = $("#div01").text("<b>Some</b> new text.");
+       document.writeln(newObj);
+    });
+
+</script>
+
+
+</body>
+</html>

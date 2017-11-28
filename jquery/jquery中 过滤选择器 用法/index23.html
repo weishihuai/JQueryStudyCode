@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:radio（取单选框元素） </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+你现在工作的企业属于：
+<input type="radio" name="radio" checked="checked" value="外企"/>外企
+<input type="radio" name="radio" value="国企"/>国企
+<input type="radio" name="radio" value="民企"/>民企
+
+<script type="text/javascript">
+
+
+    $(function () {
+
+        $(":radio").each(function () {
+           alert($(this).val());
+        });
+
+        $("input[type=radio]").each(function () {
+            alert($(this).val());
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 jquery.now()函数详解 方法 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<!--
+
+    jQuery.now()函数的返回值为Number类型，返回当前时间距1970年1月1日午夜所经过的毫秒数。
+    该函数的作用类似于 new Date().getTime()。
+
+    源码:
+    now: function() {
+        return +( new Date() );
+    }
+-->
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        document.write("当前时间毫秒数为: " + new Date().getTime() + "<br>");
+        document.write("当前时间毫秒数为: " + $.now() + "<br>");
+
+
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 attr 与 prop 区别 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+c1:<input id="c1" name="checkbox" type="checkbox" checked="checked"/></br>
+c2:<input id="c2" name="checkbox" type="checkbox" checked=true/></br>
+c3:<input id="c3" name="checkbox" type="checkbox" checked=""/></br>
+c4:<input id="c4" name="checkbox" type="checkbox" checked/></br>
+c5:<input id="c5" name="checkbox" type="checkbox"/></br>
+c6:<input id="c6" name="checkbox" type="checkbox" checked=false/></br>
+
+
+<script type="text/javascript">
+
+    $(function () {
+//        attr():
+        var a1 = $("#c1").attr("checked");   //attr1====>checked
+        var a2 = $("#c2").attr("checked");   //attr2====>checked
+        var a3 = $("#c3").attr("checked");   //attr3====>checked
+        var a4 = $("#c4").attr("checked");   //attr4====>checked
+        var a5 = $("#c5").attr("checked");   //attr5====>undefined
+        var a6 = $("#c6").attr("checked");   //attr6====>checked
+
+//        prop()
+        var p1 = $("#c1").prop("checked");   //prop1===>true
+        var p2 = $("#c2").prop("checked");   //prop2===>true
+        var p3 = $("#c3").prop("checked");   //prop3===>true
+        var p4 = $("#c4").prop("checked");   //prop4===>true
+        var p5 = $("#c5").prop("checked");   //prop5===>false
+        var p6 = $("#c6").prop("checked");   //prop6===>true
+
+        console.log("attr1====>" + a1);
+        console.log("attr2====>" + a2);
+        console.log("attr3====>" + a3);
+        console.log("attr4====>" + a4);
+        console.log("attr5====>" + a5);
+        console.log("attr6====>" + a6);
+
+        console.log("prop1===>" + p1);
+        console.log("prop2===>" + p2);
+        console.log("prop3===>" + p3);
+        console.log("prop4===>" + p4);
+        console.log("prop5===>" + p5);
+        console.log("prop6===>" + p6);
+
+
+    });
+
+</script>
+
+
+</body>
+</html>

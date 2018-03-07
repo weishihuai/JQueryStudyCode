@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery中 单选按钮相关方法总结 </title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<input type="radio" name="rd" id="rd1" checked="checked" value="rd1">rd1
+<input type="radio" name="rd" id="rd2" value="rd2">rd2
+<input type="radio" name="rd" id="rd3" value="rd3">rd3
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        //获取当前选中的单选按钮的值
+        var val1 = $("input:radio:checked").val();
+        alert("当前选中的单选按钮值为:" + val1);
+
+        var val2 = $("input[type=radio]:checked").val();
+        alert("当前选中的单选按钮值为:" + val2);
+
+        var val3 = $("input[name='rd']:checked").val();
+        alert("当前选中的单选按钮值为:" + val3);
+
+        //设置最后一个Radio为选中值
+        $("input:radio:last").attr("checked","checked");
+
+        //设置指定索引的单选按钮选中
+        $("input:radio").eq(2).attr("checked","true");
+
+
+
+
+    });
+
+</script>
+
+
+</body>
+</html>
